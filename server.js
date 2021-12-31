@@ -14,8 +14,6 @@ const app = require('./app');
 // const DB = process.env.DB_LOCAL;
 const DB = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@cluster0.c8xjr.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`;
 
-console.log(DB);
-
 mongoose.connect(DB).then(() => {
   console.log('Database connection successful!');
 });
