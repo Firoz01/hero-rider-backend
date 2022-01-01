@@ -5,6 +5,7 @@ const multer = require('multer');
 const AppError = require('../utils/appError');
 
 const Rider = require('../model/riderModel');
+const catchAsync = require('../utils/catchAsync');
 
 const storage = multer.memoryStorage();
 
@@ -24,7 +25,7 @@ exports.uploadRiderImages = upload.fields([
   { name: 'profileImg', maxCount: 1 }
 ]);
 
-exports.createRider = async (req, res, next) => {
+exports.createRider = catchAsync(async (req, res, next) => {
   const newRider = await Rider.create({
     ...req.body,
     licenceImg: req.files.licenceImg[0].buffer,
@@ -36,12 +37,12 @@ exports.createRider = async (req, res, next) => {
     status: 'success',
     data: newRider
   });
-};
+});
 
-exports.getAllRider = async (req, res, next) => {
+exports.getAllRider = catchAsync(async (req, res, next) => {
   const riders = await Rider.find();
   return res.status(200).json({
     status: 'success',
     data: riders
   });
-};
+});
