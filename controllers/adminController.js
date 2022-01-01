@@ -9,9 +9,13 @@ exports.getUsers = async (req, res, next) => {
     req.body.password === 'abcd1234'
   ) {
     const learners = await getAll(Learner, next, 'fullName email');
-    const riders = getAll(Rider);
-    console.log(learners);
-    res.status(200).json('success');
+    const riders = await getAll(Rider, next, 'fullName email');
+    const userDoc = {
+      riders,
+      learners
+    };
+    console.log(userDoc);
+    res.status(200).json(userDoc);
   } else {
     res.status(404).json('invalide email or password');
     return next(new AppError('Invalide Email Password', 404));
