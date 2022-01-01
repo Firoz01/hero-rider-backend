@@ -9,7 +9,9 @@ const learnerRouter = require('./routes/learnerRoute');
 const adminRouter = require('./routes/adminRoute');
 
 const app = express();
+
 app.use(cors());
+
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
