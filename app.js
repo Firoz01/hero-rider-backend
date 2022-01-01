@@ -6,6 +6,7 @@ const logger = require('morgan');
 
 const riderRouter = require('./routes/riderRoute');
 const learnerRouter = require('./routes/learnerRoute');
+const adminRouter = require('./routes/adminRoute');
 
 const app = express();
 
@@ -17,5 +18,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/riders', riderRouter);
 app.use('/learners', learnerRouter);
+app.use('/admin', adminRouter);
 
 module.exports = app;

@@ -27,11 +27,11 @@ const learnerSchema = new mongoose.Schema({
     minlength: [11, 'Phone number must be of 11 digit']
   },
   nidImg: {
-    type: String,
+    type: Buffer,
     required: [true, 'Learner must have NID image']
   },
-  profileImage: {
-    type: String,
+  profileImg: {
+    type: Buffer,
     required: [true, 'Learner must have profile image']
   },
   password: {

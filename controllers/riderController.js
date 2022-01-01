@@ -28,7 +28,7 @@ exports.createRider = async (req, res, next) => {
   const newRider = await Rider.create({
     ...req.body,
     licenceImg: req.files.licenceImg[0].buffer,
-    ridImg: req.files.nidImg[0].buffer,
+    nidImg: req.files.nidImg[0].buffer,
     profileImg: req.files.profileImg[0].buffer
   });
 
