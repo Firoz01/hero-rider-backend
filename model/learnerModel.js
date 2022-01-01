@@ -26,18 +26,14 @@ const learnerSchema = new mongoose.Schema({
     required: true,
     minlength: [11, 'Phone number must be of 11 digit']
   },
-  nidImg: [
-    {
-      type: String,
-      required: [true, 'Learner must have NID image']
-    }
-  ],
-  profileImage: [
-    {
-      type: String,
-      required: [true, 'Learner must have profile image']
-    }
-  ],
+  nidImg: {
+    type: String,
+    required: [true, 'Learner must have NID image']
+  },
+  profileImage: {
+    type: String,
+    required: [true, 'Learner must have profile image']
+  },
   password: {
     type: String,
     required: true,
@@ -60,6 +56,6 @@ const learnerSchema = new mongoose.Schema({
   }
 });
 
-const Learner = mongoose.model('Rider', learnerSchema);
+const Learner = mongoose.model('Learner', learnerSchema);
 
 module.exports = Learner;

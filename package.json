@@ -12,6 +12,7 @@
   "author": "Md Firoz Mia",
   "license": "ISC",
   "dependencies": {
+    "cloudinary": "^1.27.1",
     "cookie-parser": "^1.4.6",
     "cors": "^2.8.5",
     "debug": "^4.3.3",
@@ -20,6 +21,7 @@
     "mongodb": "^4.2.2",
     "mongoose": "^6.1.4",
     "morgan": "^1.10.0",
+    "multer": "^1.4.4",
     "nodemon": "^2.0.15",
     "validator": "^13.7.0"
   },

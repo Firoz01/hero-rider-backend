@@ -26,28 +26,39 @@ const riderSchema = new mongoose.Schema({
     required: true,
     minlength: [11, 'Phone number must be of 11 digit']
   },
-  licenceImg: [
-    {
-      type: String,
-      required: [true, 'Rider must have driving licence']
-    }
-  ],
+  licenceImg: {
+    type: String,
+    required: [true, 'Rider must have driving licence']
+  },
   area: {
     type: String,
     required: [true, 'Must have area']
   },
-  nidImg: [
-    {
-      type: String,
-      required: [true, 'Rider must have NID image']
-    }
-  ],
-  profileImg: [
-    {
-      type: String,
-      required: [true, 'Rider must have NID image']
-    }
-  ],
+  nidImg: {
+    type: String,
+    required: [true, 'Rider must have NID image']
+  },
+  profileImg: {
+    type: String,
+    required: [true, 'Rider must have NID image']
+  },
+  vehicleName: {
+    type: String,
+    required: [true, 'A vehicle must have a name'],
+    trim: true
+  },
+  vehicleType: {
+    type: String,
+    required: [true, 'A vehicle must have type']
+  },
+  model: {
+    type: String,
+    required: [true, 'A vehicle must have a model']
+  },
+  namePalate: {
+    type: String,
+    required: [true, 'A vehicle must have a name palate']
+  },
   password: {
     type: String,
     required: true,
