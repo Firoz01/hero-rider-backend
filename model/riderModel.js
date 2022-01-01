@@ -28,7 +28,7 @@ const riderSchema = new mongoose.Schema({
   },
   licenceImg: {
     type: String,
-    required: [true, 'Rider must have driving licence']
+    required: [true, 'Rider must have driving licence image']
   },
   area: {
     type: String,
@@ -40,7 +40,7 @@ const riderSchema = new mongoose.Schema({
   },
   profileImg: {
     type: String,
-    required: [true, 'Rider must have NID image']
+    required: [true, 'Rider must have profile image']
   },
   vehicleName: {
     type: String,

@@ -1,6 +1,6 @@
 const express = require('express');
 const path = require('path');
-const cors = require('cors');
+
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 
@@ -9,8 +9,6 @@ const learnerRouter = require('./routes/learnerRoute');
 const adminRouter = require('./routes/adminRoute');
 
 const app = express();
-
-app.use(cors());
 
 app.use(logger('dev'));
 app.use(express.json());
