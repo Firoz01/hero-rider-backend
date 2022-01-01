@@ -1,15 +1,13 @@
 const mongoose = require('mongoose');
 const dotenv = require('dotenv');
-
-process.on('uncaughtException', (err) => {
-  console.log('UNCAUGHT EXCEPTION! Shutting Down...');
-  console.log(err.name, err.message);
-
-  process.exit(1);
-});
+const cors = require('cors');
+const express = require('express');
 
 dotenv.config({ path: './config.env' });
 const app = require('./app');
+
+app.use(express.json());
+app.use(cors());
 
 // const DB = process.env.DB_LOCAL;
 const DB = process.env.DB_ATLAS;
@@ -19,19 +17,6 @@ mongoose.connect(DB).then(() => {
 });
 
 const port = process.env.PORT || 4200;
-
-const server = app.listen(port, () => {
-  console.log(`The server is running at port: ${port}`);
-});
-
-process.on('unhandledRejection', (err) => {
-  console.log('UNCAUGHT EXCEPTION! Shutting Down...');
-  console.log(err.name, err.message);
-
-  server.close(() => {
-    process.exit(1);
-  });
-});
 
 app.listen(port, () => {
   console.log(`Example app listening at http://localhost:${port}`);
