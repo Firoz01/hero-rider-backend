@@ -24,6 +24,7 @@ const server = app.listen(port, () => {
   console.log(`The server is running at port: ${port}`);
 });
 
+app.listen(port, () => console.log(`Example app listening on port ${port}!`));
 process.on('unhandledRejection', (err) => {
   console.log('UNCAUGHT EXCEPTION! Shutting Down...');
   console.log(err.name, err.message);
